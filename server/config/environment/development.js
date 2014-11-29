@@ -5,8 +5,10 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-  	uri: 'mongodb://myDb:00001234@ds063919.mongolab.com:63919/maksymromanivdb'		
-  },
+  	uri: 'mongodb://myDb:00001234@ds063919.mongolab.com:63919/maksymromanivdb'
+  }
 
-  seedDB: true
+
+  //doesn't update
+  //seedDB: true
 };
