@@ -6,8 +6,17 @@ angular.module('netRankApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'uiGmapgoogle-maps'
 ])
+  //google maps
+  .config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+      //    key: 'your api key',
+      v: '3.17',
+      libraries: 'weather,geometry,visualization'
+    });
+  })
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
       .otherwise('/');
@@ -17,6 +26,8 @@ angular.module('netRankApp', [
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {
+
+
     return {
       // Add authorization token to headers
       request: function (config) {

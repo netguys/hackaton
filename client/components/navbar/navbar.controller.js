@@ -5,7 +5,13 @@ angular.module('netRankApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
-    }];
+    }, {
+      'title': 'Chart',
+      'link': '/chart'
+    },{
+      'title': 'Rank',
+      'link': '/rank'
+    },];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

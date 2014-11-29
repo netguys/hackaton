@@ -24,4 +24,8 @@ angular.module('netRankApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+
+    //my
+    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
   });
