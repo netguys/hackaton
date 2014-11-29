@@ -9,8 +9,10 @@ google.load('visualization', '1', {
 
 
 angular.module('netRankApp')
-  .controller('ChartCtrl', function ($scope, $window) {
+  .controller('ChartCtrl', function ($scope, $window, $routeParams) {
 
+
+    debugger;
     function ChartCtrl() {
 
       $scope.data = google.visualization.arrayToDataTable([
