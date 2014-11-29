@@ -27,5 +27,7 @@ angular.module('netRankApp')
 
 
     //my
-    $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    //kyiv
+    $scope.map = { center: { latitude: 50.4020355, longitude: 30.5326905 }, zoom: 10 };
+    $scope.searchbox = { template:'searchbox.tpl.html', position:'top-left'};
   });
