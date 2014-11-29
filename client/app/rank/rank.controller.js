@@ -22,6 +22,7 @@ angular.module('netRankApp')
       rankService.getAllData().then(function(a) {
 
         $scope.data = a.data.result.records;
+
       });
     }
 

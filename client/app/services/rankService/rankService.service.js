@@ -15,7 +15,7 @@ angular.module('netRankApp')
         params: {
           "resource_id": "38625c3d-5388-4c16-a30f-d105432553a4",
           "limit": 100,
-          "fields": "INSTNM, STABBR, LATITUDE, LONGITUD, WEBADDR"
+          "fields": "INSTNM, STABBR, LATITUDE, LONGITUD, WEBADDR, CARNEGIE"
         }
       }).success(function(awesomeThings) {
         me.data_ = awesomeThings.result.records;
