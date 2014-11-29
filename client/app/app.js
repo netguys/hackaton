@@ -7,9 +7,19 @@ angular.module('netRankApp', [
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
-  'googlechart'
+  'uiGmapgoogle-maps',
+  'googlechart',
+  'LocalStorageModule'
 ])
 
+  //google maps
+  .config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+      //    key: 'your api key',
+      v: '3.17',
+      libraries: 'weather,geometry,visualization'
+    });
+  })
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
       .otherwise('/');

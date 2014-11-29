@@ -11,7 +11,10 @@ angular.module('netRankApp')
     },{
       'title': 'Rank',
       'link': '/rank'
-    },];
+    },{
+      'title': 'Stats',
+      'link': '/userstats'
+    }];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

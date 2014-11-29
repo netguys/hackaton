@@ -10,6 +10,7 @@ This is the rank view.
         <th>Site</th>
         <th>Rank</th>
         <th ng-if="showState">State</th>
+        <th>Favorite</th>
       </tr>
     </thead>
 
@@ -19,6 +20,7 @@ This is the rank view.
         <td>{{item.WEBADDR}}</td>
         <td>{{item.CARNEGIE}}</td>
         <td ng-if="showState">{{item.STABBR}}</td>
+        <td><button class="btn btn-default" ng-class="{'btn-warning':item.isFav}" ng-click="addToFavourites(item);"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></button></td>
       </tr>
     </tbody>
 
