@@ -25,9 +25,9 @@ angular.module('netRankApp')
       socket.unsyncUpdates('thing');
     });
 
-    var myLatlng = new google.maps.LatLng(41.844, -73.5942),
+    var myLatlng = new google.maps.LatLng(38.7804937, -83.4954343),
       myOptions = {
-        zoom: 3,
+        zoom: 4,
         center: myLatlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       },
@@ -51,6 +51,12 @@ angular.module('netRankApp')
       }
       return markers;
     }).then(function (markers) {
+      var markerCluster = new MarkerClusterer(map, markers, {
+        gridSize: 20,
+        maxZoom: 18,
+        zoomOnClick: true
+      });
+
       for (var i = 0; i < markers.length; i++) {
         var marker = markers[i];
 
@@ -61,6 +67,22 @@ angular.module('netRankApp')
         })(marker)
 
       }
+    });
+
+    var input = document.getElementById('pac-input');
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    var searchBox = new google.maps.places.SearchBox(input);
+    google.maps.event.addListener(searchBox, 'places_changed', function () {
+      var places = searchBox.getPlaces(),
+        bounds = new google.maps.LatLngBounds();
+
+      if (places.length == 0) {
+        return;
+      }
+
+      bounds.extend(places[0].geometry.location);
+      map.fitBounds(bounds);
     });
 
   });
