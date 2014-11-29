@@ -1,3 +1,9 @@
 <div class="col-md-12">
 This is the rank view.
+  <input type="text" placeholder="type name here" ng-model="nameFilter"/>
+
+  <ul>
+    <li ng-repeat="item in data|orderBy:'CARNEGIE':true|filter:nameFilter"> {{item.INSTNM}}, {{item.WEBADDR}}, {{item.CARNEGIE}}</li>
+  </ul>
+  <!--<pre>{{data|json}}</pre>-->
 </div>
