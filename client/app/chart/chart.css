@@ -1,0 +1,39 @@
+.col-md-12 {
+  position: absolute;
+  height: 100%;
+}
+
+.chartDiv {
+  position: absolute;
+  left : 1%;
+  top: 2%;
+  width: 98%;
+  height: 96%;
+  background-color: red;
+}
+
+.leftPanel  {
+  position: absolute;
+  left : 0;
+  top: 0;
+  width: 80%;
+  height: 100%;
+  background-color: #0271bf;
+}
+
+.rightPanel  {
+  position: absolute;
+  left : 80%;
+  top: 0;
+  width: 20%;
+  height: 100%;
+  background-color: #2b542c;
+}
+
+.saveButton{
+  position: absolute;
+  left : 10%;
+  top: 5%;
+  width: 80%;
+  height: 10%;
+}
