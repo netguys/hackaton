@@ -25,9 +25,8 @@ angular.module('netRankApp')
       socket.unsyncUpdates('thing');
     });
 
-
-    //my
+    
     //kyiv
-    $scope.map = { center: { latitude: 50.4020355, longitude: 30.5326905 }, zoom: 10 };
+    $scope.map = { center: { latitude: 50.4020355, longitude: 30.5326905 }, zoom: 1 };
     $scope.searchbox = { template:'searchbox.tpl.html', position:'top-left'};
   });
