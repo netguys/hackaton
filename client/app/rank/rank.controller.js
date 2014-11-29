@@ -17,16 +17,18 @@ angular.module('netRankApp')
        */
       $scope.message = 'Hello';
 
+      $scope.filterByName = me.filterByName.bind(me);
 
-      $scope.someFn = me.someFn.bind(me);
+      rankService.getAllData().then(function(a) {
 
-      rankService.getAllData().then(function(a) { $scope.data = a.data.result.records; });
+        $scope.data = a.data.result.records;
+      });
     }
 
     /**
      * some function
      */
-    RankCtrl.prototype.someFn = function() {
+    RankCtrl.prototype.filterByName = function() {
 
     };
 

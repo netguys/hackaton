@@ -14,21 +14,18 @@ angular.module('netRankApp')
         },
         params: {
           "resource_id": "38625c3d-5388-4c16-a30f-d105432553a4",
-          "limit": 5,
+          "limit": 100,
           "fields": "INSTNM, STABBR, LATITUDE, LONGITUD, WEBADDR"
         }
       }).success(function(awesomeThings) {
-        return awesomeThings.data.result.records;
+        me.data_ = awesomeThings.result.records;
+        return awesomeThings.result.records;
       });
-      /*
-      * INSTNM, STABBR, LATITUDE, LONGITUD, WEBADDR
-      * */
     }
 
     rankService.prototype.getAllData = function() {
       return this.promice;
     };
-
 
     return new rankService();
 
