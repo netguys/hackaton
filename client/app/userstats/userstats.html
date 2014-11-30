@@ -1,3 +1,26 @@
 <div class="col-md-12">
 This is the userstats view.
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>University Name</th>
+      <th>Site</th>
+      <th>Rank</th>
+      <th ng-if="showState">State</th>
+      <th>Favorite</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="item in data.favs|orderBy:'CARNEGIE':true|filter:nameFilter">
+      <td>{{item.INSTNM}}</td>
+      <td>{{item.WEBADDR}}</td>
+      <td>{{item.CARNEGIE}}</td>
+      <td ng-if="showState">{{item.STABBR}}</td>
+      <td><button class="btn btn-default" ng-class="{'btn-warning':item.isFav}" ng-click="removeFromFavourites(item);"><span class="glyphicon glyphicon-star" aria-hidden="true"></span></button></td>
+    </tr>
+    </tbody>
+
+  </table>
 </div>

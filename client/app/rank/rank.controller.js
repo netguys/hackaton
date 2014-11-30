@@ -25,9 +25,9 @@ angular.module('netRankApp')
 
         if (favs) {
           favs.forEach(function (item) {
-            $scope.data.find(function (elem) {
-              elem.name === item.name;
-            }).isFav = true;
+            $scope.data.filter(function (elem) {
+              return elem.INSTNM === item.INSTNM;
+            })[0].isFav = true;
           });
         }
 
@@ -39,6 +39,7 @@ angular.module('netRankApp')
      */
     RankCtrl.prototype.addToFavourites = function(item) {
       var favs = localStorageService.get("favourites") || [];
+      var index;
       item.isFav = !item.isFav;
 
       if (item.isFav) {
@@ -46,7 +47,13 @@ angular.module('netRankApp')
         localStorageService.set("favourites", favs);
       }
       else {
-
+        favs.forEach(function(el, ind){
+          if (item.INSTNM === el.INSTNM) {
+            index = ind;
+          }
+        });
+        favs.splice(index, 1)
+        localStorageService.set("favourites", favs);
       }
     };
 
